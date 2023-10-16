@@ -38,7 +38,7 @@ sed -i '41,59d' feeds/luci/themes/luci-theme-argon/luasrc/view/themes/argon/foot
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # 修改内核版本
-cp -f $GITHUB_WORKSPACE/kernel-5.15 /include/kernel-5.15
+cp -f $GITHUB_WORKSPACE/kernel-5.15 include/kernel-5.15
 
 # 修改概览里时间显示为中文数字
 #sed -i 's/os.date()/os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X")/g' package/lean/autocore/files/arm/index.htm
