@@ -44,7 +44,7 @@ cp -f $GITHUB_WORKSPACE/kernel-5.15 include/kernel-5.15
 #sed -i 's/os.date()/os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X")/g' package/lean/autocore/files/arm/index.htm
 
 # 修改欢迎banner
-cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
+# cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
