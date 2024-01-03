@@ -10,7 +10,11 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 # 回退
-git reset --hard a2a0e5b9f6ce420398487ea29a85b0b0c49c9087
+# git reset --hard a2a0e5b9f6ce420398487ea29a85b0b0c49c9087
+
+# openssl-1.1.1
+rm -rf package/libs/openssl
+svn co https://github.com/istoreos/istoreos/trunk/package/libs/openssl package/libs/openssl
 
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.1.110/g' package/base-files/files/bin/config_generate
@@ -31,6 +35,7 @@ sed -i '41,59d' feeds/luci/themes/luci-theme-argon/luasrc/view/themes/argon/foot
 
 # 修改主题背景
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
